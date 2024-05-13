@@ -26,26 +26,7 @@
                     android:scaleType="centerCrop"
                     android:src="@drawable/profile" />
 
-                <Button
-                    android:id="@+id/upload_image_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/username_text_view"
-                    android:layout_centerHorizontal="true"
-                    android:layout_gravity="start"
-                    android:layout_marginTop="16dp"
-                    android:backgroundTint="@color/yellow_green"
-                    android:text="Upload Image"
-                    android:textSize="8dp" />
-            </LinearLayout>
-            <TextView
-                android:id="@+id/username_text_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/profile_image_view"
-                android:layout_centerHorizontal="true"
-                android:text="Username"
-                android:textAppearance="?android:textAppearanceMedium" />
+             
 
 
         </androidx.appcompat.widget.LinearLayoutCompat>
