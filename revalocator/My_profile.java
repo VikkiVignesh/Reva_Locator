@@ -8,13 +8,6 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -60,52 +53,7 @@ public class My_profile extends Fragment {
         mAuth = FirebaseAuth.getInstance();
         mDatabase = FirebaseDatabase.getInstance().getReference("Users Data");
         String uId=getActivity().getIntent().getStringExtra("UserId");
-        if (uId != null) {
-            // Get user details from Firebase Realtime Database
-            mDatabase.child(uId).addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    if (dataSnapshot.exists()) {
-                        StringBuilder userDetails = new StringBuilder();
-                        // Retrieve the user's details from the dataSnapshot
-                        String name = dataSnapshot.child("name").getValue(String.class);
-                        String srn = dataSnapshot.child("srn").getValue(String.class);
-                        String password = dataSnapshot.child("pass").getValue(String.class);
-                        String dob = dataSnapshot.child("dob").getValue(String.class);
-                        String department = dataSnapshot.child("school").getValue(String.class);
-                        String sem=dataSnapshot.child("sem").getValue(String.class);
-                        String mId=dataSnapshot.child("mail").getValue(String.class);
-                        String city=dataSnapshot.child("city").getValue(String.class);
-                        String sex=dataSnapshot.child("gender").getValue(String.class);
-
-
-                        // Append the formatted user details to the StringBuilder
-                        userDetails.append("Name: ").append(name).append("\n");
-                        userDetails.append("\nSRN: ").append(srn).append("\n");
-                        userDetails.append("\nMail: ").append(mId).append("\n");
-                        userDetails.append("\nPassword: ").append(password).append("\n");
-                        userDetails.append("\nDOB: ").append(dob).append("\n");
-                        userDetails.append("\nGender: ").append(sex).append("\n");
-                        userDetails.append("\nSemester: ").append(sem).append("\n");
-                        userDetails.append("\nDepartment: ").append(department).append("\n");
-                        userDetails.append("\nCity: ").append(city).append("\n");
-
-
-
-                        // Set the formatted user details to the TextView
-                        usernameTextView.setText(userDetails.toString());
-//                        for (DataSnapshot childSnapshot : dataSnapshot.getChildren()) {
-//                            userDetails.append(childSnapshot.getKey()).append(": ")
-//                                    .append(childSnapshot.getValue()).append("\n");
-//                        }
-                        usernameTextView.setText(userDetails.toString());
-                    }
-                }
-                @Override
-                public void onCancelled(@NonNull DatabaseError databaseError) {
-                    Toast.makeText(getContext(), "Failed to load user details", Toast.LENGTH_SHORT).show();
-                }
-            });
+        
         }
 
         uploadImageButton.setOnClickListener(new View.OnClickListener() {

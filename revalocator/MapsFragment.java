@@ -2,21 +2,7 @@ package com.example.revalocator;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import android.location.Location;
-import android.location.LocationListener;
-import android.location.LocationManager;
-import android.os.Bundle;
-import android.provider.Settings;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Toast;
+im
 import android.Manifest;
 
 import androidx.annotation.NonNull;
@@ -96,25 +82,9 @@ public class MapsFragment extends Fragment implements LocationListener, OnMapRea
 //            startLocationService();
 //        }
 
-        mDatabase = FirebaseDatabase.getInstance().getReference();
+    
 
     }
-//    public static boolean isGPSEnabled(Context context) {
-//        LocationManager locationManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
-//        return locationManager != null && locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
-//    }
-//    private boolean checkLocationPermission() {
-//        return ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED &&
-//                ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED;
-//    }
-//    private void requestLocationPermissions() {
-//        ActivityCompat.requestPermissions(requireActivity(), new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION}, PERMISSION_REQUEST_CODE);
-//    }
-//    private void startLocationService() {
-//        locationManager = (LocationManager) requireContext().getSystemService(Context.LOCATION_SERVICE);
-//        if (locationManager != null) {
-//            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
-//        }
 //    }
 
 
@@ -157,7 +127,7 @@ public class MapsFragment extends Fragment implements LocationListener, OnMapRea
             mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(myLoc, 20));
 
         }
-        updateMarkerPositionInDatabase(myLoc);
+     
     }
     @Override
     public void onDestroy() {
@@ -166,28 +136,7 @@ public class MapsFragment extends Fragment implements LocationListener, OnMapRea
             locationManager.removeUpdates(this);
         }
     }
-    private void updateMarkerPositionInDatabase(LatLng newPosition) {
-
-        String dateTime = getCurrentDateTime();
-        String locationName = getLocationName(newPosition.latitude, newPosition.longitude);
-        DatabaseReference markerLocationsRef = mDatabase.child("markerLocations");
-
-        // Check if the SRN is not null
-        if (srn != null) {
-            // Create a child node with the SRN as the key
-            DatabaseReference srnRef = markerLocationsRef.child(srn);
-
-            // Update the child node with the new location and date/time
-            srnRef.child("latitude").setValue(newPosition.latitude);
-            srnRef.child("longitude").setValue(newPosition.longitude);
-            srnRef.child("locationName").setValue(locationName);
-            srnRef.child("dateTime").setValue(dateTime);
-        } else {
-            // Handle the case where SRN is null
-            // You might want to handle this situation based on your app's requirements
-        }
-    }
-
+   
 
     private String getLocationName(double latitude, double longitude) {
         Geocoder geocoder = new Geocoder(mContext, Locale.getDefault());

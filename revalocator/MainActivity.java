@@ -11,15 +11,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.Manifest;
-import android.app.AlertDialog;
-import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.location.Location;
-import android.location.LocationManager;
-import android.os.Bundle;
+
 
 import android.util.Log;
 
@@ -80,19 +72,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected( MenuItem item) {
 
-                int id = item.getItemId();
-                if(id == R.id.contact)
-                {
-                    fragmentload(new Timeline(),1);
-                } else if (id == R.id.home) {
-                    fragmentload(new My_profile(),1);
-                } else if (id == R.id.bluehtoot) {
-                    fragmentload(new MapsFragment(),1);
-                }
-                else {
-                    fragmentload(new MapsFragment(),0);
-                }
-                //on click of any button close the drawer
+               
 
                 drawerLayout.closeDrawer(GravityCompat.START);
 

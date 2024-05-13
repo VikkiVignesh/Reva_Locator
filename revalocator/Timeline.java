@@ -4,15 +4,7 @@ import android.graphics.Color;
 import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Toast;
-import android.os.Handler;
-import android.os.Looper;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
+
 
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
@@ -74,16 +66,7 @@ public class Timeline extends Fragment implements OnMapReadyCallback {
 
         // Add default coordinates to the list
 
-        defaultCoordinates.add(new LatLng(13.114605,77.635293));
-        defaultCoordinates.add(new LatLng(13.114673,77.634885));
-        defaultCoordinates.add(new LatLng(13.113907,77.634604));
-        defaultCoordinates.add(new LatLng(13.113950,77.635636));
-        defaultCoordinates.add(new LatLng(13.115670,77.636016));
-        defaultCoordinates.add(new LatLng(13.116570,77.636176));
-        defaultCoordinates.add(new LatLng(13.115664,77.635998));
-        defaultCoordinates.add(new LatLng(13.114886,77.635889));
-        defaultCoordinates.add(new LatLng(13.116095,77.634932));
-        defaultCoordinates.add(new LatLng(13.116201,77.635376));
+       
 
         // Initialize fusedLocationClient
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(requireContext());
@@ -149,56 +132,7 @@ public class Timeline extends Fragment implements OnMapReadyCallback {
         // Request location updates
     }
     private void updateLocation(Location location) {
-        // Check if user's location is near any of the default points
-        for (LatLng coordinate : defaultCoordinates) {
-            float[] distance = new float[1];
-            Location.distanceBetween(location.getLatitude(), location.getLongitude(),
-                    coordinate.latitude, coordinate.longitude, distance);
-            if (distance[0] >=8 && distance[0] < 20) { // Adjust this value as needed for your accuracy requirements
-                // Place a marker at the coordinate
-                MarkerOptions markerOptions = new MarkerOptions().position(coordinate);
-                if (coordinate.latitude == startLat && coordinate.longitude == startLng) {
-                    // Green color for start position
-                    markerOptions.icon(getMarkerIcon(Color.GREEN));
-                } else {
-                    // Store the last visited location details in Firebase\
-
-                    DatabaseReference lastVisitedRef = mDatabase.child(srn);
-                    lastVisitedRef.child("SRN").setValue(srn);
-                    lastVisitedRef.child("latitude").setValue(coordinate.latitude);
-                    lastVisitedRef.child("longitude").setValue(coordinate.longitude);
-
-                    // Check if this location is last visited
-                    lastVisitedRef.addListenerForSingleValueEvent(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                            if (dataSnapshot.exists()) {
-                                Double lastVisitedLatitude = dataSnapshot.child("latitude").getValue(Double.class);
-                                Double lastVisitedLongitude = dataSnapshot.child("longitude").getValue(Double.class);
-
-                                if (lastVisitedLatitude != null && lastVisitedLongitude != null &&
-                                        lastVisitedLatitude.equals(coordinate.latitude) && lastVisitedLongitude.equals(coordinate.longitude)) {
-                                    // Green color for just visited locations
-                                    mMap.addMarker(markerOptions.icon(getMarkerIcon(Color.GREEN)));
-                                } else {
-                                    // Red color for other locations
-                                    mMap.addMarker(markerOptions.icon(getMarkerIcon(Color.RED)));
-                                }
-                            }
-                        }
-
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError databaseError) {
-                            // Handle database error
-                        }
-                    });
-                    return;
-                }
-                // Add the marker to the map
-                mMap.addMarker(markerOptions);
-            }
-        }
-    }
+    
 
 
     private String getCurrentDateTime() {

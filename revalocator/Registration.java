@@ -113,22 +113,7 @@ public class Registration extends AppCompatActivity implements AdapterView.OnIte
                     showDatePickerDialog(Doblyt);
                 }
             });
-            yoj.setEndIconOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    showDatePickerDialog(yoj);
-                }
-            });
-            Glst.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                @Override
-                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    if (position != 0)
-                        gender = sex[position];
-                }
-
-                @Override
-                public void onNothingSelected(AdapterView<?> parent) {
-                }
+           
             });
             Schlst.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override
@@ -167,19 +152,7 @@ public class Registration extends AppCompatActivity implements AdapterView.OnIte
             });
     }
 
-    private void validate()
-    {
-        String name=Namelyt.getEditText().getText().toString().trim();
-        String srn=Srnlyt.getEditText().getText().toString().trim();
-        String pass=Passlyt.getEditText().getText().toString().trim();
-        String cfrpass=Cfrlyt.getEditText().getText().toString().trim();
-        String mail=Maillyt.getEditText().getText().toString().trim();
-        String mob=Moblyt.getEditText().getText().toString().trim();
-        String city=Citylyt.getEditText().getText().toString().trim();
-        String pin=Pinlyt.getEditText().getText().toString().trim();
-        String Dob=Doblyt.getEditText().getText().toString().trim();
-        String Yoj=yoj.getEditText().getText().toString().trim();
-        String SRN = srn.toUpperCase();
+
 
         if(name.isEmpty())
         {Namelyt.setError("Field Required");}

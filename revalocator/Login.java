@@ -45,21 +45,7 @@ public class Login extends AppCompatActivity {
                 myDb.orderByChild("srn").equalTo(srn).addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        if (dataSnapshot.exists()) {
-                            // Email exists in the database
-                            // Now, iterate through the dataSnapshot to find the user with the given email
-                            boolean passwordMatched = false; // Flag to indicate if password matched
-                            for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                                // Retrieve the user's password from the database
-                                String passwordFromDb = snapshot.child("pass").getValue(String.class);
-                                // Check if the retrieved password matches the one provided by the user
-                                if (passwordFromDb != null && passwordFromDb.equals(logpaswd)) {
-                                    // Password matches, authentication successful
-                                    passwordMatched = true;
-                                    userId = snapshot.getKey();
-                                    break; // Exit the loop as authentication is successful
-                                }
-                            }
+                        
                             if (passwordMatched) {
                                 Toast.makeText(Login.this, "Credentials Matched !!", Toast.LENGTH_SHORT).show();
 
