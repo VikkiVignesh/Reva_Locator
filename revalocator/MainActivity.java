@@ -82,7 +82,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
     @Override
     public void onBackPressed() {
         //if drawer is opne then closed the drawer first on backpressed else close the activity
