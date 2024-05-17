@@ -5,6 +5,7 @@
 ## App Features
 
 <p style="font-size:16px">
+   
 1. **Students Profile**
    - Create and manage student profiles with relevant information.
 
@@ -21,6 +22,7 @@
 ## How to Download the Project to Your System 👨‍💻
 
 <p style="font-size:16px">
+   
 1. **Fork 🍴 this repository to your account.**
 2. **Go to ➡️ the code section of the forked repository.**
 3. **In the code section, select HTTPS and copy the link 🔗.**
