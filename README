@@ -1,0 +1,33 @@
+# Reva Locator - An Application for Student Tracking
+
+Reva Locator is an app for Android phones that helps colleges keep track of attendance. It uses real-time location data to manage the campus better and fix attendance issues. The app uses advanced location technology to see where students are, making it easier to monitor student attendance.
+
+## App Features
+
+1. **Students Profile**
+   - Create and manage student profiles with relevant information.
+
+2. **Students Timeline Info**
+   - Access detailed timeline information of students' activities.
+
+3. **Students Previous and Current Info**
+   - View both previous and current data related to students.
+
+4. **Tracking**
+   - Real-time tracking of students' locations to monitor attendance and campus presence.
+
+## How to Download the Project to Your System 👨‍💻
+
+1. **Fork 🍴 this repository to your account.**
+2. **Go to ➡️ the code section of the forked repository.**
+3. **In the code section, select HTTPS and copy the link 🔗.**
+4. **Open Android Studio and select 'Open project from Version Control'. A pop-up window will appear; paste the repository📂 link.**
+
+## How to Download this App
+
+**Step 1:** Open PlayStore and search for "Reva Locator" to download.
+
+or
+
+**Step 2:** Click on the link below to download:
+[Download Reva Locator](https://play.google.com/store/apps/details?id=com.reva.revalocator)
