@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Reva Locator</string>
+    <string name="title_activity_home_maps">HomeMapsActivity</string>
+    <string name="MAPS_API_KEY">AIzaSyBPIUMX05Di24qGOo9jBjcXO7sZqTL52qA</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="ClosedDrawer">Closed Navigation Drawer</string>
+    <string name="OpenDrawer">Open Navigation Drawer</string>
+
+</resources>
