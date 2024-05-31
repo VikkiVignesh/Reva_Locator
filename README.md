@@ -27,6 +27,8 @@
 2. **Go to ➡️ the code section of the forked repository.**
 3. **In the code section, select HTTPS and copy the link 🔗.**
 4. **Open Android Studio and select 'Open project from Version Control'. A pop-up window will appear; paste the repository📂 link.**
+5. **Link project with Firebase**
+6. **Add your Google map APIkey in place of 'Enter your API Key Here' from this link https://console.cloud.google.com/welcome**
 </p>
 
 ## How to Download this App
