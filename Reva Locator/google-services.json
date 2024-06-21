@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "122441046072",
+    "project_id": "reva-events-5fb09",
+    "storage_bucket": "reva-events-5fb09.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:122441046072:android:63f11be1fbc8b8100c6ecd",
+        "android_client_info": {
+          "package_name": "com.reva.revalocator"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_wdCmXeMfaDavDIfumpoy1mL6EwxSOsQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

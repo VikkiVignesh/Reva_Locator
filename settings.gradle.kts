@@ -14,5 +14,5 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "Reva Locator"
-include(":app")
+include(":Reva Locator")
  
