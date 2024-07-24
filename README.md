@@ -5,7 +5,7 @@
 ## App Features
 
 <p style="font-size:16px">
-1. **Students Profile**
+1. Students Profile
    - Create and manage student profiles with relevant information.
 
 
@@ -16,10 +16,10 @@
 ## How to Download the Project to Your System 👨‍💻
 
 <p style="font-size:16px">
-1. **Fork 🍴 this repository to your account.** <br>
-2. **Go to ➡️ the code section of the forked repository.**<br>
-3. **In the code section, select HTTPS and copy the link 🔗.**<br>
-4. **Open Android Studio and select 'Open project from Version Control'. A pop-up window will appear; paste the repository📂 link.**
+1. Fork 🍴 this repository to your account. <br>
+2. Go to ➡️ the code section of the forked repository.<br>
+3. In the code section, select HTTPS and copy the link 🔗.<br>
+4. Open Android Studio and select 'Open project from Version Control'. A pop-up window will appear; paste the repository📂 link.
 </p>
 
 ## How to Download this App
