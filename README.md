@@ -24,9 +24,9 @@
 
 ## How to Download this App
 
-<p style="font-size:16px">**Step 1:** Open PlayStore and search for "Reva Locator" to download.</p>
+<p style="font-size:16px">Step 1: Open PlayStore and search for "Reva Locator" to download.</p>
 
 <p style="font-size:16px">or</p>
 
-<p style="font-size:16px">**Step 2:** Click on the link below to download:</p>
+<p style="font-size:16px">Step 2: Click on the link below to download:</p>
 <p style="font-size:16px">[Download Reva Locator](https://play.google.com/store/apps/details?id=com.reva.revalocator)</p>
